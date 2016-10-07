@@ -1,0 +1,113 @@
+1. Get the account id based on the email or policy/id
+
+GET /accounts/ids?email=test@gmail.com
+
+Response:
+{
+	id: "12345"
+}
+
+GET /accounts/ids?policyNumber=123&idNumber=123
+
+Response: {
+{
+	id: "12345"
+}
+
+
+2. Get questions related to the account
+
+GET /accounts/:account_id/security-questions
+
+{
+	"securityQuestions": [
+		{
+			"id": "5714f240c69e176e6794c519",
+			"localizedMessage": {
+				"id": "57164675c69ed08ff5754628",
+				"code": "security-ques1",
+				"textEn": "What was your mother\u0027s maiden name",
+				"textFr": "What was your mother\u0027s maiden name(fr)"
+			}
+		},
+		{
+			"id": "5714f240c69e176e6794c51b",
+			"localizedMessage": {
+			"id": "57164675c69ed08ff575462a",
+				"code": "security-ques2",
+				"textEn": "What street did you grow up on",
+				"textFr": "What street did you grow up on(fr)"
+			}
+		},
+		{
+			"id": "5714f240c69e176e6794c51d",
+			"localizedMessage": {
+				"id": "57164675c69ed08ff575462c",
+				"code": "security-ques3",
+				"textEn": "What is your favourite team",
+				"textFr": "What is your favourite team(fr)"
+			}
+		}
+	]
+}
+
+
+3. Answer the security question
+
+POST /accounts/:account_id/security-questions/:question_id/answers
+
+Request:
+{
+   answer: 'my answer'
+}
+
+Response:
+
+{
+	status: 'ok'
+}
+
+
+4. Validate the entered id/policy/dateOfBirth matches the account.
+
+POST /accounts/:account_id/members
+
+Request:
+{
+	policyNumber: '123',
+	idNumber: '123',
+	dateOfBirth: '22/12/1982'
+}
+
+Response:
+{
+	status: 'ok'
+}
+
+5. Get account email.
+
+GET /accounts/:account_id/emails
+
+Response:
+{
+	email: 'test@gmail.com'
+}
+
+6. Update the account password.
+
+PUT /accounts/:account_id/passwords
+
+Request:
+{
+	password: 'mypassword'
+}
+
+Response:
+{
+	status: 'ok'
+}
+
+
+
+
+

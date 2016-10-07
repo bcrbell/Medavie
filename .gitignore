@@ -1,0 +1,33 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/docs
+
+# dependencies
+/node_modules
+/bower_components
+/ssl
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+.idea/workspace.xml
+.idea/.name
+.idea/compiler.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/mss-ui.iml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/uiDesigner.xml
+graph*
+.env.deploy.*
+testem.js

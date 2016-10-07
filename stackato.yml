@@ -1,0 +1,5 @@
+app-dir: dist
+disk_quota: 2048
+memory: 64
+name: mssui-dev
+buildpack: https://github.com/HerveSeger/staticfile-buildpack#custom-404
